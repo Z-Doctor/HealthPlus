@@ -15,31 +15,30 @@ import cpw.mods.fml.common.gameevent.TickEvent;
 import cpw.mods.fml.common.gameevent.TickEvent.RenderTickEvent;
 
 public class EventRegistry {
-    public static class ForgeEvents {
-        @SubscribeEvent
-        public void renderLiving(RenderLivingEvent.Specials.Pre e) {
-            if (e.entity.worldObj.isRemote) {
-                if (e.entity.isCreatureType(EnumCreatureType.creature, false)) {
-                    CreatureDisk.renderDisk(Minecraft.getMinecraft().thePlayer,
-                            (EntityCreature) e.entity);
-                }
-            }
-        }
-    }
-
-    public static class FMLEvents {
-        @SubscribeEvent(priority=EventPriority.HIGHEST)
-        public void renderTick(TickEvent.RenderTickEvent e) {
-            HelperRender.partialTicks = e.renderTickTime;
-        }
-
-    }
-
-    public static void init() {
-        System.out.println("Registering Events");
-        MinecraftForge.EVENT_BUS.register(new ForgeEvents());
-//        MinecraftForge.TERRAIN_GEN_BUS.register(target);
-//        MinecraftForge.ORE_GEN_BUS.register(target);
-        FMLCommonHandler.instance().bus().register(new FMLEvents());
-    }
+  public static class ForgeEvents {
+//    @SubscribeEvent
+//    public void renderLiving(RenderLivingEvent.Specials.Pre e) {
+//      if (e.entity.worldObj.isRemote) {
+//        if (e.entity.isCreatureType(EnumCreatureType.creature, false)) {
+//          CreatureDisk.renderDisk(Minecraft.getMinecraft().thePlayer, (EntityCreature) e.entity);
+//        }
+//      }
+//    }
+  }
+  
+  public static class FMLEvents {
+//    @SubscribeEvent(priority = EventPriority.HIGHEST)
+//    public void renderTick(TickEvent.RenderTickEvent e) {
+//      HelperRender.partialTicks = e.renderTickTime;
+//    }
+    
+  }
+  
+  public static void init() {
+    System.out.println("Registering Events");
+    MinecraftForge.EVENT_BUS.register(new ForgeEvents());
+    // MinecraftForge.TERRAIN_GEN_BUS.register(target);
+    // MinecraftForge.ORE_GEN_BUS.register(target);
+    FMLCommonHandler.instance().bus().register(new FMLEvents());
+  }
 }

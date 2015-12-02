@@ -6,21 +6,21 @@ import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 
 public class CommonProxy {
-
-    public void preInit(FMLPreInitializationEvent e) {
-        CTabs.preInit();
-        ZItems.preInit();
-
-    }
-
-    public void init(FMLInitializationEvent e) {
-        ZItems.init();
-        EventRegistry.init();
-
-    }
-
-    public void postInit(FMLPostInitializationEvent e) {
-
-    }
-
+  
+  public void preInit(FMLPreInitializationEvent e) {
+    CTabs.preInit();
+    ZItems.preInit();
+    
+  }
+  
+  public void init(FMLInitializationEvent e) {
+    ZItems.init();
+    EventRegistry.init();
+    
+  }
+  
+  public void postInit(FMLPostInitializationEvent e) {
+    
+  }
+  
 }
